@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>{{ assignment?.assignmentName }}</h2>
+        <!-- <img [src]="assignment?.imageUrl" alt="{{ assignment?.name }}" style="max-width: 70px;"> -->
+        <div class="row">
+          <div class="col-xs-12 btn-toolbar">
+            <button (click)="onDelete()" class="btn btn-danger pull-right">Delete</button>
+            <button routerLink="edit" class="btn btn-success pull-right">Edit</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+          <div class="row">
+              <div class="col-xs-12">
+                  <p>Class Name: {{ assignment?.courseName }}</p>
+                  <p>Assignment: {{ assignment?.assignmentName }}</p>
+                  <p>Due Date: {{ latest_date }}</p>
+                  <p>Assignment Priority: {{ assignment?.priority }}</p>
+                  <p class="priority_color"></p>
+                  <p>Assignment Notes: {{ assignment?.notes }}</p>
+              </div>
+            </div>
+      </div>
+    </div>
+</div>  

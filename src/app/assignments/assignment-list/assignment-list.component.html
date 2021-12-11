@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <span class="title pad-left-right">Assignments</span>
+            </div>
+            <div class="row">
+              <div class="input-group pull-left pad-left-right col-xs-7">
+                <input
+                type="text"
+                class="form-control"
+                #searchBox
+                (keyup)="search(searchBox.value)"
+                [placeholder]="searchText"
+                />
+                <div
+                class="glyphicon glyphicon-search input-group-addon"
+                (click)="search(searchBox.value)"
+                ></div>
+              </div>
+              <a class="btn btn-info">Sort Assignments by Due Date</a>
+              <div class="pull-right pad-left-right">
+                <a class="btn btn-warning" [routerLink]="['new']">New Assignment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12 margin-top">
+              <!-- dnd-draggable
+              [dragEnabled]="true"
+              [dragData]="contact"
+              [dropZones]="['contactGroup']" 
+            | contactsFilter:term"-->
+              
+              <assignment-tracker-assignment-item *ngFor="let assignment of assignments | AssignmentsFilter:term" 
+              [assignment]="assignment"></assignment-tracker-assignment-item>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
