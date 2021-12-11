@@ -21,7 +21,7 @@
                 (click)="search(searchBox.value)"
                 ></div>
               </div>
-              <a class="btn btn-info">Sort Assignments by Due Date</a>
+              <!-- <a class="btn btn-info">Sort Assignments by Due Date</a> (the button that will be clicked to sort assignments by due date)-->
               <div class="pull-right pad-left-right">
                 <a class="btn btn-warning" [routerLink]="['new']">New Assignment</a>
               </div>
@@ -34,11 +34,7 @@
       <div class="panel-body">
         <div class="row">
             <div class="col-xs-12 margin-top">
-              <!-- dnd-draggable
-              [dragEnabled]="true"
-              [dragData]="contact"
-              [dropZones]="['contactGroup']" 
-            | contactsFilter:term"-->
+              <!-- | assignmentDateSort:'asc':assignment.dueDate (a feature that is in progress, sort the homework assignments by due date)-->
               
               <assignment-tracker-assignment-item *ngFor="let assignment of assignments | AssignmentsFilter:term" 
               [assignment]="assignment"></assignment-tracker-assignment-item>

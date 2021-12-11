@@ -75,8 +75,6 @@ export class AssignmentEditComponent implements OnInit {
   onSubmit({ value }: { value: Assignment }) {
     // let value = form.value;
     let newAssignment = new Assignment('', value.courseName, value.assignmentName, value.dueDate, value.priority, value.color, value.notes);
-    console.log(newAssignment);
-    console.log(this.editMode);
     
     if (this.editMode) {
       this.assignmentService.updateAssignment(this.originalAssignment, newAssignment);
